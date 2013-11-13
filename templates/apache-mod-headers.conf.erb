@@ -1,0 +1,13 @@
+# File Managed by Puppet
+
+# Add this to your default.pp if you want to disable the cache.
+#
+#     apache::module {
+#       'headers':
+#         templatefile => 'nelmio/apache-mod-headers.conf.erb'
+#     }
+
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform"
+    Header set Pragma "no-cache"
+</IfModule>
